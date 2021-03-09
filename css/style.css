@@ -24,7 +24,6 @@ nav img {
   margin: 15px;
   float: right;
 }
-
 .chat-icon {
   position: relative;
   width: 35px;
@@ -1494,7 +1493,7 @@ footer {
 }
 .foot-title {
   font-size: 20px;
-  margin: 0 0 15px 35px;
+  margin: 0 0 15px 20px;
 }
 .follow-footer {
   margin-left: 15px;
@@ -1502,7 +1501,7 @@ footer {
 .follow-footer h2 {
   font-size: 18px;
   font-weight: 500;
-  margin: 0 0 15px 20px;
+  margin: 0 0 15px 5px;
 }
 .foll-cont {
 }
@@ -1521,8 +1520,11 @@ footer {
   font-size: 14px;
   margin: 5px 0 0 10px;
 }
-.foot-nav {
-  display: none;
+.fol-1 img,
+.fol-2 img,
+.fol-3 img,
+.fol-4 img {
+  width: 30px;
 }
 .foot-contact {
   margin-top: 20px;
@@ -1531,7 +1533,7 @@ footer {
 .foot-contact h2 {
   font-size: 18px;
   font-weight: 500;
-  margin: 10px 0 15px 20px;
+  margin: 10px 0 15px 5px;
 }
 .phnloc {
   display: flex;
@@ -1550,13 +1552,23 @@ footer {
   font-size: 14px;
   margin: 5px 0 0 10px;
 }
+.phn img,
+.loc img,
+.eml img {
+  width: 30px;
+}
+.loc img {
+  margin-left: 15px;
+}
 footer span {
   text-align: center;
   font-size: 12px;
   display: block;
   margin-top: 20px;
 }
-
+.foot-nav {
+  display: none;
+}
 @media only screen and (min-width: 500px) {
   .type-chat-box img {
     right: 11%;
@@ -1584,6 +1596,9 @@ footer span {
 }
 
 @media only screen and (min-width: 1024px) {
+  main {
+    height: 100vh;
+  }
   .info-tag p {
     font-size: 24px;
   }
@@ -1968,8 +1983,7 @@ footer span {
     top: 7px;
   }
   .foot-title {
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin: 20px 0 30px 45px;
   }
   .allfoot-cont {
     display: flex;
@@ -1983,6 +1997,7 @@ footer span {
   }
   .follow-footer {
     width: 35%;
+    max-width: 370px;
   }
   .foll-cont {
     display: flex;
@@ -2152,5 +2167,8 @@ footer span {
 
   .testi-1-cont {
     margin-left: 15%;
+  }
+  .allfoot-cont {
+    max-width: 1350px;
   }
 }
