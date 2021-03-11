@@ -300,25 +300,26 @@ $(document).ready(function () {
     });
     //<< follow code //
     //chat//
-    setTimeout(function(){
-        $('.notif-icon').show();
-        $('audio#pop')[0].play();
-        $('.chat-bubble-1').show();
-    },2500);
-    setTimeout(function(){
-        $('.notif-icon').text('2');
-        $('audio#pop2')[0].play();
-        $('.chat-bubble-2').show();
-    },7000);
-
-    $('.chat-icon').click(function(){
+    $.get("/audio/notif.mp3", function () {
+        setTimeout(function () {
+            $('.notif-icon').show();
+            $('#pop').get(0).play();
+            $('.chat-bubble-1').show();
+        }, 2500);
+        setTimeout(function () {
+            $('.notif-icon').text('2');
+            $('#pop2').get(0).play();
+            $('.chat-bubble-2').show();
+        }, 5000);
+    });
+    $('.chat-icon').click(function () {
         $('.bot-chat').show();
     });
-    $('.chat-close').click(function(){
+    $('.chat-close').click(function () {
         $('.bot-chat').hide();
         $('.notif-icon').hide();
     });
-    $('.type-chat-box img').click(function(){
+    $('.type-chat-box img').click(function () {
         $('.chat-bubble-cont').prepend('<div class="sent-bubble-1"><div class="sent-img"></div><p> </p></div>');
         var inVal = $('.input-type').val();
         $('.sent-bubble-1').children('p').first().text(inVal);
@@ -343,7 +344,7 @@ $(document).ready(function () {
             html1 = html1.substring(0, 44) + "<br>" + html1.substring(44);
             $(".sent-bubble-1").children('p').first().html(html1);
         }
-      });
+    });
 
 });
 $(document).ready(function () {
@@ -361,7 +362,7 @@ $(document).ready(function () {
                 var maxHeight = 0,
                     container = $(el),
                     children = container.children();
-            
+
                 children.each(function () {
                     var childHeight = $('.work1').height();
                     if (childHeight > maxHeight) {
