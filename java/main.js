@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     $('.ham-btn').click(function () {
         $('.setting').fadeIn('fast');
     })
@@ -9,6 +10,8 @@ $(document).ready(function () {
         $('.profile svg').css({
             "animation": "loading 2500ms ease-in-out infinite alternate"
         });
+        $('.slide-container div:first-child').find('span').addClass('active-slide');
+        $('.all-content-slide div:first-child').addClass('active');
         setTimeout(function () {
             $('.slide-page').fadeIn();
             profileSld = window.setInterval(slider, 5000);
@@ -121,7 +124,6 @@ $(document).ready(function () {
     $('.high-1').click(function () {
         var indeX = $(this).index();
         var highCont = $('.high-1 svg');
-        console.log(indeX);
         var clickedHigh = $(highCont).eq(indeX);
         clickedHigh.css({
             "animation": "loading-high 4500ms ease-in-out alternate"
@@ -136,17 +138,21 @@ $(document).ready(function () {
         $('.slider').find('span').removeClass('actived');
         $('.slider').find('span').removeClass('active-slide');
         $('.all-content-slide div').removeClass('active');
+        window.clearInterval(profileSld);
+        window.clearInterval(profileHigh);
     });
     //<< high close window//
 
     /*-------------- INDEX slide -------------------*/
+
+
     function slider() {
         $currentSlide = $('.all-content-slide div.active');
+        console.log($currentSlide.length);
         if ($currentSlide.length == 0) {
             $('.all-content-slide div:first-child').addClass('active');
         } else {
             $next = $currentSlide.removeClass('active').next();
-            console.log($next);
             if ($next.length == 0) {
                 $('.all-content-slide div:first-child').addClass('active');
             } else {
@@ -155,14 +161,14 @@ $(document).ready(function () {
         }
     }
 
+
     function sliderHigh() {
         $currentSlider = $('.slide-container span.active-slide');
-        console.log($currentSlider);
         if ($currentSlider.length == 0) {
             $('.slide-container div:first-child').find('span').addClass('active-slide');
         } else {
             $next1 = $currentSlider.removeClass('active-slide').addClass('actived').parent().next().children();
-            console.log($next1);
+            //console.log($next1);
             if ($next1.length == 0) {
                 $('.slide-container div:first-child').find('span').addClass('active-slide');
                 $('.slider').find('span').removeClass('actived');
@@ -184,90 +190,53 @@ $(document).ready(function () {
         }
     });
     $('.prev').click(function () {
-        $('.active-slide:last').removeClass('active-slide');
-        $('.actived:last').removeClass('actived').addClass('active-slide');
-        $('.active:last').removeClass('active').prev().addClass('active');
-        console.log('clicked-prev');
-        window.clearInterval(profileSld);
-        window.clearInterval(profileHigh);
-        profileSld = window.setInterval(slider, 5000);
-        profileHigh = window.setInterval(sliderHigh, 5000);
+        $firstSliderr = $("div.slide-container").children().children()[0];
+        if (!$firstSliderr.classList.contains("active-slide")) {
+            $('.active-slide:last').removeClass('active-slide');
+            $('.actived:last').removeClass('actived').addClass('active-slide');
+            $('.active:last').removeClass('active').prev().addClass('active');
+            console.log('clicked-prev');
+            window.clearInterval(profileSld);
+            window.clearInterval(profileHigh);
+            profileSld = window.setInterval(slider, 5000);
+            profileHigh = window.setInterval(sliderHigh, 5000);
+        }
     });
     $('.next').click(function () {
-        $('.active-slide:last').removeClass('active-slide').addClass('actived').closest('span').parent().next().children().addClass('active-slide');
-        console.log('clicked-next');
-        $('.active:last').removeClass('active').next().addClass('active');
+        $lastSliderr = $("div.slide-container").children().children()[$("div.slide-container").children().length - 1];
+        if (!$lastSliderr.classList.contains("active-slide")) {
+            $('.active-slide:last').removeClass('active-slide').addClass('actived').closest('span').parent().next().children().addClass('active-slide');
+            console.log('clicked-next');
+            $('.active:last').removeClass('active').next().addClass('active');
+            window.clearInterval(profileSld);
+            window.clearInterval(profileHigh);
+            profileSld = window.setInterval(slider, 5000);
+            profileHigh = window.setInterval(sliderHigh, 5000);
+        } else {
+            console.log("Last Page!!");
+            $(".actived").removeClass();
+            $(".active-slide").removeClass();
+            $('.all-content-slide div').removeClass('active');
+            $('.slide-container div:first-child').find('span').addClass('active-slide');
+            $('.all-content-slide div:first-child').addClass('active');
+            window.clearInterval(profileSld);
+            window.clearInterval(profileHigh);
+            profileSld = window.setInterval(slider, 5000);
+            profileHigh = window.setInterval(sliderHigh, 5000);
+        }
+    });
+    $(".all-content-slide").mousedown(function (e) {
+        console.log("Hold");
+        $(".active-slide").css("animation-play-state", "paused");
         window.clearInterval(profileSld);
         window.clearInterval(profileHigh);
+    }).mouseup(function (e) {
+        console.log("Release");
+        $(".active-slide").css("animation-play-state", "running");
         profileSld = window.setInterval(slider, 5000);
         profileHigh = window.setInterval(sliderHigh, 5000);
     });
     /*-------------- slide -------------------*/
-
-    /*-------------- WORKS slide -------------------
-    function slider() {
-        $currentSlide = $('.all-content-slide div.active');
-        if ($currentSlide.length == 0) {
-            $('.all-content-slide div:first-child').addClass('active');
-        } else {
-            $next = $currentSlide.removeClass('active').next();
-            console.log($next);
-            if ($next.length == 0) {
-                $('.all-content-slide div:first-child').addClass('active');
-            } else {
-                $next.addClass('active');
-            }
-        }
-    }
-
-    function sliderHigh() {
-        $currentSlider = $('.slide-container span.active-slide');
-        console.log($currentSlider);
-        if ($currentSlider.length == 0) {
-            $('.slide-container div:first-child').find('span').addClass('active-slide');
-        } else {
-            $next1 = $currentSlider.removeClass('active-slide').addClass('actived').parent().next().children();
-            console.log($next1);
-            if ($next1.length == 0) {
-                $('.slide-container div:first-child').find('span').addClass('active-slide');
-                $('.slider').find('span').removeClass('actived');
-            } else {
-                $next1.addClass('active-slide');
-            }
-        }
-    }
-    $('.toggle-input').change(function () {
-        if ($(this).is(':checked')) {
-            console.log('checked');
-            $('.index').addClass('dark-bg');
-            $('p').addClass('wht-font');
-            $('h1').addClass('wht-font');
-            $('.setting')
-        } else {
-            console.log('unchecked');
-            $('.index').removeClass('dark');
-        }
-    });
-    $('.prev').click(function () {
-        $('.active-slide:last').removeClass('active-slide');
-        $('.actived:last').removeClass('actived').addClass('active-slide');
-        $('.active:last').removeClass('active').prev().addClass('active');
-        console.log('clicked-prev');
-        window.clearInterval(profileSld);
-        window.clearInterval(profileHigh);
-        profileSld = window.setInterval(slider, 5000);
-        profileHigh = window.setInterval(sliderHigh, 5000);
-    });
-    $('.next').click(function () {
-        $('.active-slide:last').removeClass('active-slide').addClass('actived').closest('span').parent().next().children().addClass('active-slide');
-        console.log('clicked-next');
-        $('.active:last').removeClass('active').next().addClass('active');
-        window.clearInterval(profileSld);
-        window.clearInterval(profileHigh);
-        profileSld = window.setInterval(slider, 5000);
-        profileHigh = window.setInterval(sliderHigh, 5000);
-    });
-    -------------- WORKS slide -------------------*/
 
     // follow code>> //   
     $('.follow-mouse').click(function () {
@@ -300,18 +269,17 @@ $(document).ready(function () {
     });
     //<< follow code //
     //chat//
-    $.get("/audio/notif.mp3", function () {
-        setTimeout(function () {
-            $('.notif-icon').show();
-            $('#pop').get(0).play();
-            $('.chat-bubble-1').show();
-        }, 2500);
-        setTimeout(function () {
-            $('.notif-icon').text('2');
-            $('#pop2').get(0).play();
-            $('.chat-bubble-2').show();
-        }, 5000);
-    });
+    setTimeout(function () {
+        $('.notif-icon').show();
+        $('audio#pop')[0].play();
+        $('.chat-bubble-1').show();
+    }, 2500);
+    setTimeout(function () {
+        $('.notif-icon').text('2');
+        $('audio#pop2')[0].play();
+        $('.chat-bubble-2').show();
+    }, 7000);
+
     $('.chat-icon').click(function () {
         $('.bot-chat').show();
     });
@@ -345,7 +313,6 @@ $(document).ready(function () {
             $(".sent-bubble-1").children('p').first().html(html1);
         }
     });
-
 });
 $(document).ready(function () {
     if (window.matchMedia('(min-width: 104px)').matches) {
@@ -374,20 +341,3 @@ $(document).ready(function () {
         });
     }
 });
-const options = {
-    bottom: '64px', // default: '32px'
-    right: 'unset', // default: '32px'
-    left: '32px', // default: 'unset'
-    time: '0.5s', // default: '0.3s'
-    mixColor: '#fff', // default: '#fff'
-    backgroundColor: '#fff', // default: '#fff'
-    buttonColorDark: '#100f2c', // default: '#100f2c'
-    buttonColorLight: '#fff', // default: '#fff'
-    saveInCookies: false, // default: true,
-    label: '🌓', // default: ''
-    autoMatchOsTheme: true // default: true
-}
-
-
-const darkmode = new Darkmode(options);
-darkmode.showWidget();
