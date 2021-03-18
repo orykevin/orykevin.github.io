@@ -1599,6 +1599,9 @@ footer span {
   main {
     height: 100vh;
   }
+  .main-testi {
+    height: inherit;
+  }
   .info-tag p {
     font-size: 24px;
   }
@@ -1712,14 +1715,6 @@ footer span {
     width: 100%;
   }
 
-  .testi-all-cont {
-    width: 90%;
-    display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    margin: 40px auto;
-  }
-
   .blocker {
     width: 10px;
     height: 100px;
@@ -1730,21 +1725,20 @@ footer span {
   .testimo-page {
   }
 
+  .testi-all-cont {
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%;
+    margin: 40px auto;
+  }
+
   .testi-1-cont,
   .testi-2-cont,
   .testi-3-cont {
-    width: 520px;
+    width: 470px;
     height: 220px;
-    margin: 0px 20px 20px 4%;
     padding-left: 200px;
-  }
-
-  .testi-1-cont {
-    margin-left: 10%;
-  }
-
-  .testi-3-cont {
-    margin-right: 20%;
+    margin: 40px auto;
   }
 
   .profile-testi {
@@ -2056,92 +2050,6 @@ footer span {
   }
 }
 
-/*---------------slider switch---------------*/
-.toggle {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: block;
-  height: auto;
-  width: 70px;
-  margin: auto;
-  cursor: pointer;
-  margin-top: 15px;
-  margin-left: 90px;
-}
-
-.toggle-input {
-  display: none;
-  margin: 0;
-}
-
-.toggle-off,
-.toggle-on {
-  height: 1.8125rem;
-  width: 1.8125rem;
-  color: rgba(46, 45, 44, 0.1);
-  vertical-align: top;
-  text-align: center;
-  line-height: 1.8125rem !important;
-}
-
-.toggle-input:checked + .toggle-controller.default-success {
-  border: 0.125rem solid rgba(108, 177, 233, 0.781);
-  background: rgba(0, 136, 247, 0.375);
-}
-
-.toggle-input:checked + .toggle-controller.default-success:after {
-  left: 1.5625rem;
-}
-
-.toggle-controller.default-success {
-  position: relative;
-  display: inline-block;
-  height: 1.5625rem;
-  width: 3.125rem;
-  border: 0.125rem solid rgba(46, 45, 44, 0.05);
-  -webkit-border-radius: 1.5625rem;
-  -moz-border-radius: 1.5625rem;
-  border-radius: 1.5625rem;
-  -webkit-box-shadow: inset 0 0 0.1875rem rgba(46, 45, 44, 0.25);
-  -moz-box-shadow: inset 0 0 0.1875rem rgba(46, 45, 44, 0.25);
-  box-shadow: inset 0 0 0.1875rem rgba(46, 45, 44, 0.25);
-  background: rgba(46, 45, 44, 0.025);
-  -webkit-transition: all 0.25s ease;
-  -moz-transition: all 0.25s ease;
-  -o-transition: all 0.25s ease;
-  transition: all 0.25s ease;
-}
-
-.toggle-controller.default-success:after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: "";
-  display: block;
-  height: 1.5625rem;
-  width: 1.5625rem;
-  -webkit-border-radius: 1.5625rem;
-  -moz-border-radius: 1.5625rem;
-  border-radius: 1.5625rem;
-  -webkit-box-shadow: 0 0.0625rem 0.125rem rgba(46, 45, 44, 0.2);
-  -moz-box-shadow: 0 0.0625rem 0.125rem rgba(46, 45, 44, 0.2);
-  box-shadow: 0 0.0625rem 0.125rem rgba(46, 45, 44, 0.2);
-  background: white;
-  -webkit-transition: all 0.25s ease;
-  -moz-transition: all 0.25s ease;
-  -o-transition: all 0.25s ease;
-  transition: all 0.25s ease;
-}
-
-.toggle-off.active {
-  color: red;
-}
-
-.toggle-on.active {
-  color: rgb(0, 55, 128);
-}
-
 /*------------------- dark mode------- --------*/
 .dark-bg {
   background-color: #242424;
@@ -2158,17 +2066,49 @@ footer span {
 /*----------------- end of dark color-------------------*/
 @media only screen and (min-width: 1360px) {
   .testi-all-cont {
-    width: 90%;
+    margin-top: 10px;
     display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
+    flex-wrap: flex;
+    max-width: 1240px;
+  }
+  .testi-1-cont,
+  .testi-2-cont,
+  .testi-3-cont {
+    width: 400px;
+    height: 220px;
+    padding-left: 150px;
     margin: 40px auto;
   }
-
-  .testi-1-cont {
-    margin-left: 15%;
+  .profile-testi img {
+    position: absolute;
+    top: 40%;
+    left: -130px;
+    width: 120px;
+    height: 120px;
   }
-  .allfoot-cont {
-    max-width: 1350px;
+
+  .profile-name {
+    font-size: 1em;
+    width: 300px;
+    margin-top: 25px;
+  }
+
+  .profile-testi span {
+    font-size: 13px;
+  }
+
+  .testi-comment {
+    font-size: 1.1em;
+  }
+
+  .image {
+    margin-top: 20px;
+    width: 55px;
+    height: 55px;
+  }
+
+  .testi-head {
+    margin-top: 230px;
+    font-size: 1.2em;
   }
 }
