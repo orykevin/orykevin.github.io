@@ -1,26 +1,6 @@
 /*! lightslider - v1.1.6 - 2016-10-25
  * https://github.com/sachinchoolur/lightslider
  * Copyright (c) 2016 Sachin N; Licensed MIT */
-$(document).ready(function () {
-    if (window.matchMedia('(min-width: 124px)').matches) {
-        $("#lightSlider").lightSlider({
-            item: 3,
-            autoWidth: false,
-            slideMove: 1,
-            slideMargin: 1,
-            vertical: true,
-            verticalHeight: 100,
-            vThumbWidth: 30,
-            thumbItem: 1,
-            pager: false,
-            gallery: false,
-            galleryMargin: 4,
-            thumbMargin: 3,
-            currentPagerPosition: 'right',
-            adaptiveHeight: true,
-        });
-    }
-});
 (function ($, undefined) {
     'use strict';
     var defaults = {
