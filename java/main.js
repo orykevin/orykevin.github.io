@@ -313,31 +313,33 @@ $(document).ready(function () {
             $(".sent-bubble-1").children('p').first().html(html1);
         }
     });
-});
-$(document).ready(function () {
-    if (window.matchMedia('(min-width: 104px)').matches) {
-        $('#autoWidth').lightSlider({
-            autoWidth: true,
-            loop: false,
-            pager: false,
-            adaptiveHeight: true,
-            slideMargin: 10,
-            freeMove: true,
-            responsive: [],
-            onSliderLoad: function (el) {
+    $(function () {
+        jQuery.get('java/lightslider1.js', function () {
+            if (window.matchMedia('(min-width: 104px)').matches) {
+                $('#autoWidth').lightSlider({
+                    autoWidth: true,
+                    loop: false,
+                    pager: false,
+                    adaptiveHeight: true,
+                    slideMargin: 10,
+                    freeMove: true,
+                    responsive: [],
+                    onSliderLoad: function (el) {
 
-                var maxHeight = 0,
-                    container = $(el),
-                    children = container.children();
+                        var maxHeight = 0,
+                            container = $(el),
+                            children = container.children();
 
-                children.each(function () {
-                    var childHeight = $('.work1').height();
-                    if (childHeight > maxHeight) {
-                        maxHeight = childHeight;
+                        children.each(function () {
+                            var childHeight = $('.work1').height();
+                            if (childHeight > maxHeight) {
+                                maxHeight = childHeight;
+                            }
+                        });
+                        container.height(maxHeight);
                     }
                 });
-                container.height(maxHeight);
             }
         });
-    }
+    });
 });
