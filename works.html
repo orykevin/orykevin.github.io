@@ -223,8 +223,34 @@
     </div>
 </div>
     <span>© Kevin Ory ,2021 . All Right Reserved</span>
-
 </footer>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#autoWidth').lightSlider({
+                    autoWidth: true,
+                    loop: false,
+                    pager: false,
+                    adaptiveHeight: true,
+                    slideMargin: 10,
+                    freeMove: true,
+                    responsive: [],
+                    onSliderLoad: function (el) {
+
+                        var maxHeight = 0,
+                            container = $(el),
+                            children = container.children();
+
+                        children.each(function () {
+                            var childHeight = $('.work1').height();
+                            if (childHeight > maxHeight) {
+                                maxHeight = childHeight;
+                            }
+                        });
+                        container.height(maxHeight);
+                    }
+                });
+    });
+  </script>
 </body>
 
 </html>
