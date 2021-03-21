@@ -227,6 +227,19 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $('#autoWidth').lightSlider({
+            onSliderLoad: function (el) {
+                        var maxHeight = 0,
+                            container = $(el),
+                            children = container.children();
+
+                        children.each(function () {
+                            var childHeight = $('.work1').height();
+                            if (childHeight > maxHeight) {
+                                maxHeight = childHeight;
+                            }
+                        });
+                        container.height(maxHeight);
+                    },
                     autoWidth: true,
                     loop: false,
                     pager: false,
