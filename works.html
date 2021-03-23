@@ -227,7 +227,18 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $('#autoWidth').lightSlider({
-            onSliderLoad: function (el) {
+                    autoWidth: true,
+                    loop: false,
+                    pager: false,
+                    adaptiveHeight: true,
+                    slideMargin: 10,
+                    freeMove: true,
+                    responsive: [
+                    {
+                breakpoint:1000,
+                settings: {
+                    autoWidth:true,
+                    onSliderLoad: function (el) {
                         var maxHeight = 0,
                             container = $(el),
                             children = container.children();
@@ -240,13 +251,9 @@
                         });
                         container.height(maxHeight);
                     },
-                    autoWidth: true,
-                    loop: false,
-                    pager: false,
-                    adaptiveHeight: true,
-                    slideMargin: 10,
-                    freeMove: true,
-                    responsive: [],
+                  }
+                }
+                    ],
                 });
     });
   </script>
