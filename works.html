@@ -233,7 +233,7 @@
                     adaptiveHeight: true,
                     slideMargin: 10,
                     freeMove: true,
-                    onSliderLoad: function (el) {
+                    onBeforeSlide: function (el) {
                         var maxHeight = 0,
                             container = $(el),
                             children = container.children();
