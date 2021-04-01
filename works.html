@@ -233,7 +233,20 @@
                     adaptiveHeight: true,
                     slideMargin: 10,
                     freeMove: true,
-                    responsive: [
+                    onSliderLoad: function (el) {
+                        var maxHeight = 0,
+                            container = $(el),
+                            children = container.children();
+
+                        children.each(function () {
+                            var childHeight = $('.work1').height();
+                            if (childHeight > maxHeight) {
+                                maxHeight = childHeight;
+                            }
+                        });
+                        container.height(maxHeight);
+                    }
+                    /*responsive: [
                     {
                 breakpoint:1000,
                 settings: {
@@ -253,7 +266,7 @@
                     },
                   }
                 }
-                    ],
+                    ],*/
                 });
     });
   </script>

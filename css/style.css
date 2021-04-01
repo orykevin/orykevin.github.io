@@ -63,27 +63,45 @@ nav img {
   width: 100%;
   height: 100%;
   background-color: white;
-  border: solid black 1px;
   position: absolute;
+  display: none;
   top: 0;
   z-index: 10;
-  display: none;
+  border-left: solid black 1px;
+  border-right: solid black 1px;
+  border-bottom: solid black 1px;
+}
+@keyframes pop-chat {
+  0% {
+    transform: translate(35%, -45%) scale(0.1);
+  }
+  100% {
+    transform: translateY(0%) scale(1);
+  }
+}
+@keyframes close-chat {
+  0% {
+    transform: translateY(0%) scale(1);
+  }
+  100% {
+    transform: translate(35%, -45%) scale(0);
+  }
 }
 
 .header-chat {
   width: 100%;
   height: 65px;
-  border-bottom: solid black 1px;
   box-shadow: 4px 3px 10px rgb(180, 179, 179);
   display: flex;
   margin-bottom: 20px;
+  background-color: #5689ee;
 }
 
 .head-chat-img {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: black;
+  background-color: white;
   border: solid;
   padding: 10px;
   margin-left: 10px;
@@ -94,6 +112,8 @@ nav img {
   font-size: 20px;
   margin-top: 20px;
   margin-left: 20px;
+  color: white;
+  font-weight: 800;
 }
 
 .chat-close {
@@ -101,6 +121,7 @@ nav img {
   position: absolute;
   right: 20px;
   top: 25px;
+  cursor: pointer;
 }
 
 .chat-bubble-cont {
@@ -232,13 +253,12 @@ nav img {
 .menu-cont {
   width: 100%;
   height: 100vh;
-  position: sticky;
   background-color: white;
   z-index: 99;
   top: 90px;
   display: none;
-  position: absolute;
   overflow-y: hidden;
+  position: absolute;
 }
 
 .menu-select {
@@ -252,6 +272,7 @@ nav img {
   list-style: none;
   margin-left: 20px;
   margin-top: 10px;
+  z-index: 100;
 }
 
 .menu-select ul li {
@@ -264,7 +285,9 @@ nav img {
   font-size: 2em;
   font-weight: 500;
 }
-
+.follow-clk {
+  cursor: pointer;
+}
 .menu-select ul li a:hover {
   color: #5689ee;
 }
@@ -1251,6 +1274,13 @@ span.actived {
   width: 90%;
   margin: 30px auto 0 auto;
 }
+.about-main {
+  position: relative;
+}
+.all-about-cont {
+  position: relative;
+  padding-bottom: 20px;
+}
 
 .about-cont {
   position: relative;
@@ -1291,6 +1321,7 @@ span.actived {
 }
 
 .des-1 {
+  margin-bottom: 15px;
   font-size: 1.6em;
   font-weight: 500;
   text-align: center;
@@ -1310,26 +1341,170 @@ span.actived {
 
 .des-2 span,
 .des-3 span {
-  font-size: 2em;
+  font-size: 2.1em;
 }
 
 .about-gallery {
   width: 90%;
   height: 110px;
   border: solid 3px #8a3ab8;
-  margin: 20px auto;
+  margin: 100px auto 65px auto;
   justify-content: space-between;
   display: flex;
   flex-wrap: wrap;
   border-radius: 10px;
-  max-width: 400px;
+  max-width: 390px;
 }
 
 .about-gallery img {
-  width: 95px;
+  width: 30%;
   height: 95px;
-  margin: 7px 10px;
+  margin: 7px 1% 0 1%;
   border-radius: 10px;
+  max-width: 95px;
+}
+.skill-cont {
+  width: 90%;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  z-index: 5;
+}
+.skill-header {
+  width: 100%;
+  background-color: #2e3034;
+  height: 20px;
+  padding: 10px 0 15px 0;
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.skill-header :hover {
+  cursor: pointer;
+}
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 15px solid #2e3034;
+  position: absolute;
+  top: -10px;
+  left: 46%;
+}
+/*.arrow-up:hover {
+  animation-name: arrowchange;
+  animation-fill-mode: forwards;
+  animation-duration: 200ms;
+  animation-timing-function: linear;
+}*/
+
+@keyframes arrowchange {
+  0% {
+    transform: rotate(0deg);
+    border-bottom: 15px solid white;
+    opacity: 0;
+  }
+  100% {
+    border-bottom: 15px solid white;
+    top: -5px;
+    transform: rotate(180deg);
+    opacity: 1;
+  }
+}
+@keyframes arrowchange2 {
+  0% {
+    top: 0px;
+    transform: rotate(180deg);
+    border-bottom: 50px solid #2e3034;
+  }
+  100% {
+    border-bottom: 15px solid #2e3034;
+    top: -10px;
+    transform: rotate(0deg);
+  }
+}
+
+.skill-cont p {
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+}
+.skill-charts {
+  width: 100%;
+  height: 360px;
+  margin: 0 auto;
+  background-color: #2e3034;
+  display: none;
+  max-width: 400px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.all-skill {
+}
+.skill-1,
+.skill-2 {
+  display: flex;
+  width: 95%;
+  margin: 0 auto 17px auto;
+  max-width: 350px;
+}
+.skill-1 p {
+  font-size: 16px;
+  font-weight: 500;
+  width: 70px;
+  text-align: left;
+  margin: 7px 18% 0 4%;
+}
+.skill-1 img {
+  width: 27px;
+  margin-right: 5px;
+  margin-top: 3px;
+  vertical-align: center;
+  opacity: 0;
+  animation: dotskill 250ms 250ms linear forwards;
+}
+.skill-2 p {
+  font-size: 16px;
+  font-weight: 500;
+  width: 70px;
+  text-align: left;
+  margin: 0px 18% 0 4%;
+}
+.skill-2 img {
+  width: 27px;
+  margin-right: 5px;
+  margin-top: 5px;
+  vertical-align: center;
+  opacity: 0;
+  animation: dotskill 250ms 250ms linear forwards;
+}
+.skill-charts button {
+  border: none;
+  background-color: #5689ee;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  display: block;
+  width: 90%;
+  margin: 40px auto 0 auto;
+  max-width: 270px;
+  padding: 7px 10px;
+  border-radius: 5px;
+}
+@keyframes dotskill {
+  0% {
+    opacity: 0;
+    margin-right: -15px;
+  }
+  100% {
+    opacity: 1;
+    margin-right: 5px;
+  }
 }
 
 .index-follow-cont {
@@ -1656,8 +1831,35 @@ footer span {
 .toggle-on.active {
   color: rgb(0, 55, 128);
 }
+@media only screen and (min-width: 400px) {
+  .about-gallery {
+    margin: 120px auto 65px auto;
+  }
+  .about-gallery img {
+    max-width: 105px;
+    height: 100px;
+    margin: 4px 2% 0 2%;
+  }
+  .about-descript {
+    max-width: 450px;
+  }
+  .des-2,
+  .des-3 {
+    font-size: 17px;
+  }
+  .skill-header {
+    max-width: 450px;
+  }
+  .skill-charts {
+    max-width: 450px;
+    height: 370px;
+  }
+}
 
 @media only screen and (min-width: 500px) {
+  .about-gallery {
+    margin: 100px auto 65px auto;
+  }
   .type-chat-box img {
     right: 11%;
   }
@@ -1669,6 +1871,9 @@ footer span {
   .chat-bubble-1,
   .chat-bubble-2 {
     margin-left: 10px;
+  }
+  .des-1 {
+    margin-bottom: 25px;
   }
 }
 
@@ -1939,14 +2144,14 @@ footer span {
   .about-cont {
     width: 280px;
     height: 280px;
-    margin: 0;
+    margin-top: 0px;
     left: 20%;
   }
 
   .about-descript {
     position: relative;
-    width: 50%;
-    left: 170px;
+    width: 56%;
+    left: 200px;
     bottom: 200px;
     max-width: 600px;
   }
@@ -1955,6 +2160,7 @@ footer span {
     text-align: left;
     margin-left: 10px;
     font-size: 2em;
+    width: 100%;
   }
 
   .des-1 span {
@@ -1963,7 +2169,7 @@ footer span {
 
   .des-2,
   .des-3 {
-    font-size: 1.4em;
+    font-size: 1.2em;
   }
 
   .des-2 span,
@@ -1973,17 +2179,32 @@ footer span {
 
   .about-gallery {
     position: relative;
-    bottom: 250px;
+    bottom: 320px;
     right: 30%;
     max-width: 350px;
+  }
+  .about-gallery img {
+    max-width: 95px;
   }
 
   .all-about-cont {
     max-width: 1200px;
     margin: 50px auto 0 auto;
     width: 95%;
+    height: 70vh;
   }
-
+  .skill-cont {
+    position: absolute;
+    bottom: 7%;
+    left: 20%;
+  }
+  .skill-header {
+    max-width: 400px;
+  }
+  .skill-charts {
+    max-width: 400px;
+    display: none;
+  }
   .index-follow-cont {
     position: absolute;
     right: 7%;
@@ -2180,7 +2401,10 @@ footer span {
     width: 300px;
     margin-top: 25px;
   }
-
+  .about-descript {
+    left: 230px;
+    max-width: 700px;
+  }
   .profile-testi span {
     font-size: 13px;
   }
@@ -2194,9 +2418,46 @@ footer span {
     width: 55px;
     height: 55px;
   }
-
   .testi-head {
     margin-top: 230px;
     font-size: 1.2em;
+  }
+  .about-cont {
+    margin-top: 50px;
+  }
+  .about-gallery {
+    bottom: 340px;
+  }
+  .skill-cont {
+    bottom: 12%;
+  }
+  .des-1 {
+    margin-top: 20px;
+    font-size: 2.2em;
+    margin-bottom: 40px;
+  }
+  .des-2,
+  .des-3 {
+    font-size: 1.3em;
+    margin-top: 30px;
+  }
+  .follow-footer {
+    max-width: 360px;
+    margin-right: 0px;
+  }
+  .allfoot-cont {
+    max-width: 1360px;
+  }
+  .foll-cont {
+  }
+}
+@media (min-width: 1024px) and (min-height: 680px) {
+  .all-about-cont {
+    max-height: 500px;
+  }
+}
+@media (min-width: 1024px) and (min-height: 720px) {
+  .all-about-cont {
+    max-height: 550px;
   }
 }

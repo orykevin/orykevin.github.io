@@ -281,11 +281,16 @@ $(document).ready(function () {
     }, 7000);
 
     $('.chat-icon').click(function () {
-        $('.bot-chat').show();
+        $(".bot-chat").show();
+        $('.bot-chat').css({
+            "animation": "pop-chat 250ms linear forwards"
+        });
     });
     $('.chat-close').click(function () {
-        $('.bot-chat').hide();
         $('.notif-icon').hide();
+        $('.bot-chat').css({
+            "animation": "close-chat 250ms linear forwards"
+        });
     });
     $('.type-chat-box img').click(function () {
         $('.chat-bubble-cont').prepend('<div class="sent-bubble-1"><div class="sent-img"></div><p> </p></div>');
@@ -312,5 +317,33 @@ $(document).ready(function () {
             html1 = html1.substring(0, 44) + "<br>" + html1.substring(44);
             $(".sent-bubble-1").children('p').first().html(html1);
         }
+    });
+    // --------------- skill chart ---------------------//
+    let clickCounter = 0;
+    $('.skill-header').click(function () {
+        if (clickCounter === 0) {
+            $('.skill-charts').animate({
+                height: 'toggle'
+            });
+            $('.arrow-up').css({
+                "animation": "arrowchange 200ms linear forwards"
+            });
+            $(".skill-header").css({
+                "padding": "25px 0 35px 0",
+            });
+            clickCounter++;
+        } else {
+            $('.skill-charts').animate({
+                height: 'toggle'
+            });
+            $('.arrow-up').css({
+                "animation": "arrowchange2 200ms linear forwards"
+            });
+            $(".skill-header").css({
+                "padding": "10px 0 15px 0",
+            });
+            clickCounter--;
+        }
+
     });
 });
