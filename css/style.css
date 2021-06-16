@@ -1561,6 +1561,10 @@ span.actived {
   margin-right: 50px;
   margin-left: 45px;
 }
+.work1 a {
+  text-decoration: underline;
+  color: #333333;
+}
 
 .work1-head {
   width: 270px;
