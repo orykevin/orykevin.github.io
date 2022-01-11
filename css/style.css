@@ -251,7 +251,7 @@ nav img {
 
 /*------------------- chatt-------------------*/
 .menu-cont {
-  width: 100%;
+  width: 98%;
   height: 100vh;
   background-color: white;
   z-index: 99;
@@ -1378,6 +1378,10 @@ span.actived {
   position: relative;
   padding-bottom: 20px;
 }
+.main-home {
+  height: auto;
+  overflow-x: hidden;
+}
 
 .about-cont {
   position: relative;
@@ -1431,11 +1435,11 @@ span.actived {
 
 .des-2,
 .des-3 {
-  font-size: 15px;
-  width: 95%;
+  font-size: 16px;
+  width: 90%;
   margin: 10px auto 10px auto;
   font-weight: 500;
-  line-height: 32px;
+  line-height: 22px;
 }
 .des-2 span,
 .des-3 span {
@@ -1560,7 +1564,7 @@ span.actived {
   margin: 7px 18% 0 4%;
 }
 .skill-1 img {
-  width: 27px;
+  width: 25px;
   margin-right: 5px;
   margin-top: 3px;
   vertical-align: center;
@@ -1575,7 +1579,7 @@ span.actived {
   margin: 0px 18% 0 4%;
 }
 .skill-2 img {
-  width: 27px;
+  width: 25px;
   margin-right: 5px;
   margin-top: 5px;
   vertical-align: center;
@@ -1648,8 +1652,8 @@ span.actived {
 
 .work-cont-all {
   width: 90%;
-  height: 300px;
-  padding-top: 50px;
+  height: auto;
+  padding-top: 60px;
   display: flex;
   overflow-x: auto;
   list-style: none;
@@ -2317,10 +2321,11 @@ footer span {
   .des-1 span {
     font-size: 2em;
   }
-
   .des-2,
   .des-3 {
     font-size: 1.2em;
+    line-height: 32px;
+    width: 95%;
   }
 
   .des-2 span,
@@ -2330,7 +2335,7 @@ footer span {
 
   .about-gallery {
     position: relative;
-    bottom: 320px;
+    bottom: 330px;
     right: 30%;
     max-width: 350px;
   }
