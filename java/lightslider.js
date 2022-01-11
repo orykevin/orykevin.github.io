@@ -42,7 +42,7 @@
         responsive: [],
         /* jshint ignore:start */
         onBeforeStart: function ($el) {},
-        onSliderLoad: function ($el) {
+        onSliderLoad: function (el) {
             var maxHeight = 0,
                 container = $(el),
                 children = container.children();

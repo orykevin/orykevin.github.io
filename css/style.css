@@ -678,6 +678,39 @@ button.next {
   padding: 0;
   opacity: 0;
 }
+.content-3 h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.content-3 img {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+.content-3 p {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.content-3 a {
+  font-size: 24px;
+  color: #5689ee;
+  margin-top: 25px;
+  display: block;
+  margin: 25px auto;
+  text-align: center;
+  width: 100%;
+}
+.content-4 h1,
+.content-5 h1 {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 .workflow-2,
 .workflow-1,
@@ -904,25 +937,25 @@ span.actived {
 
 .recent-cont-1 {
   width: 90%;
-  height: 220px;
+  height: auto;
   margin: 0 auto;
   border-radius: 15px;
   background-color: #efefef;
   box-shadow: 4px 3px 10px rgb(180, 179, 179);
   margin-top: 10px;
   position: relative;
-  padding-top: 10px;
+  padding: 10px 0 30px 0;
   max-width: 500px;
 }
 
-.recent-cont-1 a {
+.more-works {
   margin-top: 20px;
-  margin-left: 72%;
+  margin-left: 99%;
   text-decoration: none;
   font-weight: 500;
   text-decoration: underline;
   color: #5689ee;
-  font-size: 1.1em;
+  font-size: 16px;
 }
 
 .recent-cont-2 a {
@@ -970,12 +1003,15 @@ span.actived {
 }
 
 .recent-cont-2 {
+  position: relative;
   width: 90%;
-  height: 220px;
+  max-width: 500px;
+  height: auto;
   background-color: #efefef;
   margin: 10px auto;
   border-radius: 15px;
   box-shadow: 4px 3px 10px rgb(180, 179, 179);
+  padding-bottom: 25px;
 }
 
 .recent-3 {
@@ -992,8 +1028,7 @@ span.actived {
 }
 
 .recent-head-1,
-.recent-head-2,
-.recent-head-3 {
+.recent-head-2 {
   display: flex;
   margin-left: 5%;
 }
@@ -1002,16 +1037,78 @@ span.actived {
 .recent-head-2 p,
 .recent-head-3 p {
   font-weight: 500;
-  font-size: 1.4em;
+  font-size: 19px;
 }
 
 .recent-1 img,
-.recent-2 img,
-.recent-3 img {
+.recent-2 img {
   width: 30px;
   margin-left: 20px;
 }
-
+.recent-1 img {
+  margin-top: -5px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.more-works {
+  position: absolute;
+  width: 220px;
+  top: -5px;
+  right: -100px;
+}
+.react-cont-1 {
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+.react-head-1 {
+  display: flex;
+}
+.react-head-1 a {
+  color: #5689ee;
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+.react-head-1 img {
+  margin-top: -1px;
+  width: 25px;
+}
+.react-info-1 {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 16px;
+  max-width: 360px;
+}
+.design-cont {
+}
+.desktop-design {
+  width: 100%;
+  padding-top: 35px;
+}
+.desktop-design p,
+.mobile-design p {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+.desktop-design img {
+  display: block;
+  width: 90%;
+  max-width: 360px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+.mobile-design img {
+  display: block;
+  width: 80%;
+  max-width: 250px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+.design-2 {
+  display: none;
+}
 /*--------------- blog post -----------------*/
 .search-cont {
   margin-top: 60px;
@@ -1300,6 +1397,7 @@ span.actived {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  object-fit: cover;
 }
 
 .about-cont svg {
@@ -1337,8 +1435,8 @@ span.actived {
   width: 95%;
   margin: 10px auto 10px auto;
   font-weight: 500;
+  line-height: 32px;
 }
-
 .des-2 span,
 .des-3 span {
   font-size: 2.1em;
@@ -1348,7 +1446,7 @@ span.actived {
   width: 90%;
   height: 110px;
   border: solid 3px #8a3ab8;
-  margin: 100px auto 65px auto;
+  margin: 110px auto 65px auto;
   justify-content: space-between;
   display: flex;
   flex-wrap: wrap;
@@ -1362,6 +1460,7 @@ span.actived {
   margin: 7px 1% 0 1%;
   border-radius: 10px;
   max-width: 95px;
+  object-fit: cover;
 }
 .skill-cont {
   width: 90%;
@@ -1567,13 +1666,17 @@ span.actived {
 }
 
 .work1-head {
+  font-size: 12px;
   width: 270px;
   height: 35px;
   border: solid black 1px;
   border-bottom: none;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  display: none;
+  display: flex;
+}
+.work1-head p {
+  padding-top: 5px;
 }
 
 .work1-img {
@@ -1851,6 +1954,9 @@ footer span {
   .des-3 {
     font-size: 17px;
   }
+  .des-2 {
+    margin-top: -10px;
+  }
   .skill-header {
     max-width: 450px;
   }
@@ -1879,16 +1985,15 @@ footer span {
   .des-1 {
     margin-bottom: 25px;
   }
+  .react-head-1 {
+    margin-left: 20px;
+  }
 }
 
 @media only screen and (min-width: 750px) {
   .inst-cont img {
     width: 24%;
     margin-left: 6%;
-  }
-
-  .recent-cont-2 {
-    height: 280px;
   }
 }
 
@@ -1906,33 +2011,75 @@ footer span {
     width: 90%;
     margin: 20px auto 30px auto;
   }
-
   .recent-cont-1,
   .recent-cont-2,
   .recent-cont-3 {
-    max-width: 900px;
-    height: 370px;
+    max-width: 800px;
+    margin: 30px auto;
   }
-
-  .recent-cont-1 a,
-  .recent-cont-2 a {
-    margin-left: 85%;
+  .react-head-1 a {
+    font-size: 20px;
   }
-
-  .recent-head-1,
-  .recent-head-2,
-  .recent-head-3 {
-    margin-left: 10%;
+  .react-info-1 {
+    max-width: 850px;
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  .react-cont-2 {
+    display: block;
+  }
+  .recent-head-1 p,
+  .recent-head-2 p {
+    margin-left: 8%;
     margin-bottom: 20px;
+    font-size: 24px;
+  }
+  .react-head-1 p,
+  .react-head-2 p {
+    font-size: 28px;
+  }
+  .design-cont {
+    display: flex;
+    position: relative;
+    padding-top: 40px;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .desktop-design img {
+    margin: 0px 0px 0 0px;
+    width: 100%;
+    max-width: 9000px;
+  }
+  .mobile-design img {
+    margin: 0 auto;
+    max-width: 150px;
+    margin-left: 50px;
+  }
+  .mobile-design {
+    width: 30%;
+  }
+  .desktop-design {
+    padding: 0;
+    width: 70%;
+    margin: 0px 0px;
+  }
+  .mobile-design p,
+  .desktop-design p {
+    text-align: left;
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+  .mobile-design p {
+    margin-left: 50px;
+  }
+  .design-2 {
+    display: flex;
   }
 
   .inst-cont img {
     width: 25%;
     margin-left: 6%;
     border-radius: 10px;
-  }
-
-  .blog-cont-1 {
   }
 
   .content-cont-1 img {
@@ -2360,6 +2507,18 @@ footer span {
 @media only screen and (min-width: 1350px) {
   .index-follow-cont {
     right: 12%;
+  }
+  .recent-cont-1,
+  .recent-cont-2 {
+    max-width: 1000px;
+    padding: 10px 20px 40px 20px;
+  }
+  .mobile-design img {
+    max-width: 190px;
+  }
+  .more-works {
+    top: 0px;
+    right: -90px;
   }
 }
 
