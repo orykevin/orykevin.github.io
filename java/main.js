@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    
 
     $('.ham-btn').click(function () {
         $('.setting').fadeIn('fast');
@@ -106,6 +107,66 @@ $(document).ready(function () {
         });
         setTimeout(function () {
             $('.slide-page').fadeIn();
+            profileSld = window.setInterval(slider, 5000);
+            profileHigh = window.setInterval(sliderHigh, 5000);
+        }, 2500);
+    });
+    $('#flow-6').click(function () {
+        $('.view-link').attr('href', 'https://orykevin.github.io/cndpedia/');
+        $('.source-link').attr('href', 'https://github.com/orykevin/cndpedia/');
+        $('#flow-6 svg').css({
+            "animation": "loading 2500ms ease-in-out infinite alternate"
+        });
+        setTimeout(function () {
+            $('.slide-page-2').fadeIn();
+            profileSld = window.setInterval(slider, 5000);
+            profileHigh = window.setInterval(sliderHigh, 5000);
+        }, 2500);
+    });
+    $('#flow-7').click(function () {
+        $('.view-link').attr('href', 'https://orykevin.github.io/zodiology/');
+        $('.source-link').attr('href', 'https://github.com/orykevin/zodiology/');
+        $('#flow-7 svg').css({
+            "animation": "loading 2500ms ease-in-out infinite alternate"
+        });
+        setTimeout(function () {
+            $('.slide-page-2').fadeIn();
+            profileSld = window.setInterval(slider, 5000);
+            profileHigh = window.setInterval(sliderHigh, 5000);
+        }, 2500);
+    });
+    $('#flow-8').click(function () {
+        $('.view-link').attr('href', 'https://orykevin.github.io/paperockscissors/');
+        $('.source-link').attr('href', 'https://github.com/orykevin/paperockscissors');
+        $('#flow-8 svg').css({
+            "animation": "loading 2500ms ease-in-out infinite alternate"
+        });
+        setTimeout(function () {
+            $('.slide-page-2').fadeIn();
+            profileSld = window.setInterval(slider, 5000);
+            profileHigh = window.setInterval(sliderHigh, 5000);
+        }, 2500);
+    });
+    $('#flow-9').click(function () {
+        $('.view-link').attr('href', 'https://orykevin.github.io/savingcounter/');
+        $('.source-link').attr('href', 'https://github.com/orykevin/savingcounter');
+        $('#flow-9 svg').css({
+            "animation": "loading 2500ms ease-in-out infinite alternate"
+        });
+        setTimeout(function () {
+            $('.slide-page-2').fadeIn();
+            profileSld = window.setInterval(slider, 5000);
+            profileHigh = window.setInterval(sliderHigh, 5000);
+        }, 2500);
+    });
+    $('#flow-10').click(function () {
+        $('.view-link').attr('href', 'https://orykevin.github.io/forcaster/');
+        $('.source-link').attr('href', 'https://github.com/orykevin/forcaster/');
+        $('#flow-10 svg').css({
+            "animation": "loading 2500ms ease-in-out infinite alternate"
+        });
+        setTimeout(function () {
+            $('.slide-page-2').fadeIn();
             profileSld = window.setInterval(slider, 5000);
             profileHigh = window.setInterval(sliderHigh, 5000);
         }, 2500);

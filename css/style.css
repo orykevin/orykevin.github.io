@@ -553,6 +553,15 @@ nav img {
   top: 0;
   display: none;
 }
+.slide-page-2 {
+  background-color: #585858;
+  z-index: 20;
+  position: relative;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  display: none;
+}
 
 .nextpre-cont {
   width: 100%;
@@ -664,7 +673,16 @@ button.next {
   position: relative;
   margin-top: 20px;
 }
-
+.story-container-2 {
+  width: 90%;
+  height: 95vh;
+  background-color: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  position: relative;
+  margin-top: 20px;
+  margin: 20px auto;
+}
 .content-1,
 .content-2,
 .content-3,
@@ -678,24 +696,32 @@ button.next {
   padding: 0;
   opacity: 0;
 }
-.content-3 h1 {
+.content-3 h1,
+.content-4 h1,
+.content-5 h1 {
   font-size: 36px;
   text-align: center;
   margin-bottom: 30px;
 }
-.content-3 img {
+.content-3 img,
+.content-4 img,
+.content-5 img {
   display: block;
   width: 200px;
   margin: 0 auto;
   margin-bottom: 30px;
 }
-.content-3 p {
+.content-3 p,
+.content-4 p,
+.content-5 p {
   font-size: 24px;
   text-align: center;
   margin-bottom: 20px;
   font-weight: 600;
 }
-.content-3 a {
+.content-3 a,
+.content-4 a,
+.content-5 a {
   font-size: 24px;
   color: #5689ee;
   margin-top: 25px;
@@ -703,13 +729,6 @@ button.next {
   margin: 25px auto;
   text-align: center;
   width: 100%;
-}
-.content-4 h1,
-.content-5 h1 {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .workflow-2,
@@ -878,6 +897,7 @@ span.actived {
   width: 80px;
   height: 80px;
   margin: 5px 0 0 10px;
+  z-index: 4;
 }
 
 .profile-small img {
@@ -1072,6 +1092,9 @@ span.actived {
 .react-head-1 img {
   margin-top: -1px;
   width: 25px;
+}
+.cnd-logo img {
+  width: 35px;
 }
 .react-info-1 {
   width: 90%;
@@ -1547,6 +1570,9 @@ span.actived {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
+.skill-chart a:hover {
+  cursor: pointer;
+}
 .all-skill {
 }
 .skill-1,
@@ -1586,7 +1612,8 @@ span.actived {
   opacity: 0;
   animation: dotskill 250ms 250ms linear forwards;
 }
-.skill-charts button {
+.skill-charts a button {
+  cursor: pointer;
   border: none;
   background-color: #5689ee;
   font-size: 18px;
@@ -1594,10 +1621,11 @@ span.actived {
   color: white;
   display: block;
   width: 90%;
-  margin: 40px auto 0 auto;
+  margin: 25px auto 0 auto;
   max-width: 270px;
   padding: 7px 10px;
   border-radius: 5px;
+  text-decoration: underline;
 }
 @keyframes dotskill {
   0% {
@@ -1652,17 +1680,22 @@ span.actived {
 
 .work-cont-all {
   width: 90%;
-  height: auto;
+  height: 100px;
   padding-top: 60px;
   display: flex;
   overflow-x: auto;
   list-style: none;
+  z-index: 0;
+}
+.work-cont-all li {
+  height: 700px;
 }
 
 .work1 {
   width: 240px;
   margin-right: 50px;
   margin-left: 45px;
+  height: auto;
 }
 .work1 a {
   text-decoration: underline;
@@ -1942,6 +1975,53 @@ footer span {
 .toggle-on.active {
   color: rgb(0, 55, 128);
 }
+.viewproject-container {
+  display: block;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+}
+.live-view {
+  width: 250px;
+  text-align: center;
+  position: relative;
+}
+.view-link,
+.source-link {
+  color: #5689ee;
+}
+.live-view svg,
+.source-code svg {
+  fill: #333333;
+}
+.live-view img,
+.source-code img {
+  position: absolute;
+  top: 50px;
+  right: 102px;
+  width: 50px;
+  height: 50px;
+}
+.live-view p,
+.source-code p {
+  font-size: 18px;
+  color: #5689ee;
+  font-weight: 600;
+}
+.source-code {
+  width: 250px;
+  text-align: center;
+  position: relative;
+}
+.source-code:hover .svg-logo {
+  fill: #5689ee;
+}
+.live-view:hover .svg-logo {
+  fill: #5689ee;
+}
+
 @media only screen and (min-width: 400px) {
   .about-gallery {
     margin: 120px auto 65px auto;
@@ -2506,6 +2586,12 @@ footer span {
   }
   footer span {
     margin-top: 50px;
+  }
+  .viewproject-container {
+    display: flex;
+    top: 50%;
+    left: 50%;
+    width: 500px;
   }
 }
 

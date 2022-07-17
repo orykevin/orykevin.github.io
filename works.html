@@ -17,6 +17,56 @@
 </head>
 
 <body>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#autoWidth').lightSlider({
+                        autoWidth: true,
+                        loop: false,
+                        pager: false,
+                        adaptiveHeight: true,
+                        slideMargin: 10,
+                        freeMove: true, 
+                        onSliderLoad: function (el) {
+                            var maxHeight = 0,
+                                container = $(el),
+                                children = container.children();
+    
+                            children.each(function () {
+                                var childHeight = $(".work1").height();
+                                if (childHeight > maxHeight) {
+                                    maxHeight = childHeight;
+                                }
+                            });
+                            container.height(maxHeight);
+                        },onBeforeSlide: function ($el) {
+                            var maxHeight = 0,
+                                container = $(el),
+                                children = container.children();
+    
+                            children.each(function () {
+                                var childHeight = $(".work1").height();
+                                if (childHeight > maxHeight) {
+                                    maxHeight = childHeight;
+                                }
+                            });
+                            container.height(maxHeight);
+                        },onAfterSlide: function ($el) {
+                            var maxHeight = 0,
+                                container = $(el),
+                                children = container.children();
+    
+                            children.each(function () {
+                                var childHeight = $(".work1").height();
+                                if (childHeight > maxHeight) {
+                                    maxHeight = childHeight;
+                                }
+                            });
+                            container.height(maxHeight);
+                        }
+                        
+                    });
+        });
+      </script>
     <main>
     <nav class="nav-home">
         <div class="profile-small">
@@ -57,6 +107,115 @@
 
     <ul class="work-cont-all " id="autoWidth">
         <li>
+            
+            <div class="work1">
+                <a target="_blank" href="https://orykevin.github.io/forcaster/">
+                <div class="work1-head">
+                    <div class="work1-img" style="background-color: #6596e4;"></div>
+                    <p>Forcaster (React Project)</p>
+                </div>
+            </a>
+                <img class="work1-show" src="image/works/forcast.png" alt="" style="border: solid 1px;">
+                <img class="work1-show-mbl" src="image/works/forcast-mbl.png" alt="" style="border: solid 1px;">
+                <div class="high-work" id="flow-10">
+                    <div class="cont-img-work">
+                        <img class="ui" src="image/works/workflow.svg" alt="">
+                    </div>
+                    <svg>
+                        <circle cx="70" cy="48" r="42">
+                    </svg>
+                    <p>works</p>
+                </div>
+
+            </div>
+        </li>
+        <li>
+            
+            <div class="work1">
+                <a target="_blank" href="https://orykevin.github.io/cndpedia/">
+                <div class="work1-head">
+                    <div class="work1-img" style="background-color: #af7546;"></div>
+                    <p>CNDPedia (React Project)</p>
+                </div>
+            </a>
+                <img class="work1-show" src="image/works/cnd.jpg" alt="" style="border: solid 1px;">
+                <img class="work1-show-mbl" src="image/works/cnd-mobile.jpg" alt="" style="border: solid 1px;">
+                <div class="high-work" id="flow-6">
+                    <div class="cont-img-work">
+                        <img class="ui" src="image/works/workflow.svg" alt="">
+                    </div>
+                    <svg>
+                        <circle cx="70" cy="48" r="42">
+                    </svg>
+                    <p>works</p>
+                </div>
+
+            </div>
+        </li>
+        <li>
+            <div class="work1">
+                <a target="_blank" href="https://orykevin.github.io/zodiology/">
+                <div class="work1-head">
+                    <div class="work1-img" style="background-color: #b088e5;"></div>
+                    <p>Zodiology (React Project)</p>
+                </div>
+                <img class="work1-show" src="image/works/zodiology.jpg" alt="" style="border: solid 1px;">
+                <img class="work1-show-mbl" src="image/works/zodiology-mbl.jpg" alt="" style="border: solid 1px;">
+            </a>
+                <div class="high-work" id="flow-7">
+                    <div class="cont-img-work">
+                        <img class="ui" src="image/works/workflow.svg" alt="">
+                    </div>
+                    <svg>
+                        <circle cx="70" cy="48" r="42">
+                    </svg>
+                    <p>works</p>
+                </div>
+            
+            </div>
+        </li>
+        <li>
+            <div class="work1">
+                <div class="work1-head hidden-mbl">
+                    <div class="work1-img" style="background-color: #F1202B;"></div>
+                    <p>Doggle (Design Project)</p>
+                </div>
+                <img class="work1-show" src="image/works/doggle.jpg" alt="">
+                <img class="work1-show-mbl" src="image/works/doggle-mbl.jpg" alt="">
+                <div class="high-work" id="flow-1">
+                    <div class="cont-img-work">
+                        <img class="ui" src="image/works/workflow.svg" alt="">
+                    </div>
+                    <svg>
+                        <circle cx="70" cy="48" r="42">
+                    </svg>
+                    <p>works</p>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="work1">
+                <a target="_blank" href="https://orykevin.github.io/paperockscissors/">
+                <div class="work1-head">
+                    <div class="work1-img" style="background-color: #88ABE5;"></div>
+                    <p>Paperock (React Project)</p>
+                </div>
+                <img class="work1-show" src="image/works/paperrocksciss.jpg" alt="" style="border: solid 1px;">
+                <img class="work1-show-mbl" src="image/works/paperrocksciss-mbl.jpg" alt="" style="border: solid 1px;">
+            </a>
+                <div class="high-work" id="flow-8">
+                    <div class="cont-img-work">
+                        <img class="ui" src="image/works/workflow.svg" alt="">
+                    </div>
+                    <svg>
+                        <circle cx="70" cy="48" r="42">
+                    </svg>
+                    <p>works</p>
+                </div>
+            
+            </div>
+        </li>
+        <li>
             <div class="work1">
                 <div class="work1-head hidden-mbl">
                     <div class="work1-img"></div>
@@ -73,67 +232,6 @@
                     </svg>
                     <p>works</p>
                 </div>
-            </div>
-        </li>
-        <li>
-            <div class="work1">
-                <a href="https://orykevin.github.io/paperockscissors/">
-                <div class="work1-head">
-                    <div class="work1-img" style="background-color: #88ABE5;"></div>
-                    <p>Paperock (React Project)</p>
-                </div>
-                <img class="work1-show" src="image/works/paperrocksciss.jpg" alt="" style="border: solid 1px;">
-                <img class="work1-show-mbl" src="image/works/paperrocksciss-mbl.jpg" alt="" style="border: solid 1px;">
-                <div class="high-work" id="flow-5">
-                    <div class="cont-img-work">
-                        <img class="ui" src="image/works/workflow.svg" alt="">
-                    </div>
-                    <svg>
-                        <circle cx="70" cy="48" r="42">
-                    </svg>
-                    <p>works</p>
-                </div>
-            </a>
-            </div>
-        </li>
-        <li>
-            <div class="work1">
-                <div class="work1-head hidden-mbl">
-                    <div class="work1-img" style="background-color: #F1202B;"></div>
-                    <p>Doggle (Design Project)</p>
-                </div>
-                <img class="work1-show" src="image/works/doggle.jpg" alt="">
-                <img class="work1-show-mbl" src="image/works/doggle-mbl.jpg" alt="">
-                <div class="high-work" id="flow-2">
-                    <div class="cont-img-work">
-                        <img class="ui" src="image/works/workflow.svg" alt="">
-                    </div>
-                    <svg>
-                        <circle cx="70" cy="48" r="42">
-                    </svg>
-                    <p>works</p>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="work1">
-                <a href="https://orykevin.github.io/zodiology/">
-                <div class="work1-head">
-                    <div class="work1-img" style="background-color: #b088e5;"></div>
-                    <p>Zodiology (React Project)</p>
-                </div>
-                <img class="work1-show" src="image/works/zodiology.jpg" alt="" style="border: solid 1px;">
-                <img class="work1-show-mbl" src="image/works/zodiology-mbl.jpg" alt="" style="border: solid 1px;">
-                <div class="high-work" id="flow-5">
-                    <div class="cont-img-work">
-                        <img class="ui" src="image/works/workflow.svg" alt="">
-                    </div>
-                    <svg>
-                        <circle cx="70" cy="48" r="42">
-                    </svg>
-                    <p>works</p>
-                </div>
-            </a>
             </div>
         </li>
         <li>
@@ -157,14 +255,15 @@
         </li>
         <li>
             <div class="work1">
-                <a href="https://orykevin.github.io/savingcounter/">
+                <a target="_blank" href="https://orykevin.github.io/savingcounter/">
                 <div class="work1-head">
                     <div class="work1-img" style="background-color: #0E9347;"></div>
                     <p>Saving Counter (React Project)</p>
                 </div>
                 <img class="work1-show" src="image/works/savingcounter.jpg" alt="" style="border: solid 1px;">
                 <img class="work1-show-mbl" src="image/works/savingcounter-mbl.jpg" alt="" style="border: solid 1px;">
-                <div class="high-work" id="flow-5">
+            </a>
+                <div class="high-work" id="flow-9">
                     <div class="cont-img-work">
                         <img class="ui" src="image/works/workflow.svg" alt="">
                     </div>
@@ -173,7 +272,7 @@
                     </svg>
                     <p>works</p>
                 </div>
-            </a>
+            
             </div>
         </li>
         <li>
@@ -253,6 +352,42 @@
             <button class="prev"></button>
             <button class="next"></button>
         </div>
+        
+    </div>
+    <div class="slide-page-2" style="display: none;">
+        <div class="slide-container">
+            <div class="slider"><span class="sl1 active-slide"></span></div>
+        </div>
+        <div class="story-container-2" >
+            <img class="expand-btn" src="image/logo/expand.svg" alt="">
+            <a href="" class="slide-close">x</a>
+            <div class="all-content-slide-1">
+                <div class="workflow-1 active">
+                    <!--        Need to Working          -->
+                    <div class="viewproject-container" >
+                        <a href="" target="_blank" class="view-link">
+                        <div class="live-view">
+                            <img class="ui" src="image/globe.png" alt="">
+                            <svg class="svg-logo">
+                                <circle cx="122" cy="75" r="50">
+                            </svg>
+                            <p>Live View</p>
+                        </div>
+                        </a>
+                        <a href="" target="_blank" class="source-link">
+                        <div class="source-code">
+                            <img class="ui" src="image/github-sign.png" alt="">
+                            <svg class="svg-logo">
+                                <circle cx="122" cy="75" r="50">
+                            </svg>
+                            <p>Source Code</p>
+                        </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
 </main>
 <footer>
@@ -287,31 +422,6 @@
 </div>
     <span>© Kevin Ory ,2021 . All Right Reserved</span>
 </footer>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#autoWidth').lightSlider({
-                    autoWidth: true,
-                    loop: false,
-                    pager: false,
-                    adaptiveHeight: true,
-                    slideMargin: 10,
-                    freeMove: true, 
-                    onBeforeSlide: function (el) {
-                        var maxHeight = 0,
-                            container = $(el),
-                            children = container.children();
-
-                        children.each(function () {
-                            var childHeight = $('.work1').height();
-                            if (childHeight > maxHeight) {
-                                maxHeight = childHeight;
-                            }
-                        });
-                        container.height(maxHeight);
-                    }
-                });
-    });
-  </script>
 </body>
 
 </html>

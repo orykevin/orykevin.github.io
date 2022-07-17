@@ -24,11 +24,11 @@
         prevHtml: '',
         nextHtml: '',
         rtl: false,
-        adaptiveHeight: false,
+        adaptiveHeight: true,
         centerSlide: false,
         vertical: false,
         verticalHeight: 500,
-        vThumbWidth: 100,
+        vThumbWidth: 500,
         thumbItem: 10,
         pager: true,
         gallery: false,
@@ -48,15 +48,39 @@
                 children = container.children();
 
             children.each(function () {
-                var childHeight = $('.work1').height();
+                var childHeight = $(this).height();
                 if (childHeight > maxHeight) {
                     maxHeight = childHeight;
                 }
             });
             container.height(maxHeight);
         },
-        onBeforeSlide: function ($el, scene) {},
-        onAfterSlide: function ($el, scene) {},
+        onBeforeSlide: function ($el, scene) {
+            var maxHeight = 0,
+                container = $(el),
+                children = container.children();
+
+            children.each(function () {
+                var childHeight = $(this).height();
+                if (childHeight > maxHeight) {
+                    maxHeight = childHeight;
+                }
+            });
+            container.height(maxHeight);
+        },
+        onAfterSlide: function ($el, scene) {
+            var maxHeight = 0,
+                container = $(el),
+                children = container.children();
+
+            children.each(function () {
+                var childHeight = $(this).height();
+                if (childHeight > maxHeight) {
+                    maxHeight = childHeight;
+                }
+            });
+            container.height(maxHeight);
+        },
         onBeforeNextSlide: function ($el, scene) {},
         onBeforePrevSlide: function ($el, scene) {}
         /* jshint ignore:end */
@@ -943,6 +967,7 @@
                 refresh.createPager();
             }
             if (settings.adaptiveHeight === true && settings.vertical === false) {
+                console.log($children.eq(scene).outerHeight(true))
                 $el.css('height', $children.eq(scene).outerHeight(true));
             }
             if (settings.adaptiveHeight === false) {
