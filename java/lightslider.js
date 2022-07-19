@@ -15,7 +15,7 @@
         easing: 'linear', //'for jquery animation',//
         speed: 400, //ms'
         auto: false,
-        pauseOnHover: false,
+        pauseOnHover: true,
         loop: false,
         slideEndAnimation: true,
         pause: 2000,
@@ -27,8 +27,8 @@
         adaptiveHeight: true,
         centerSlide: false,
         vertical: false,
-        verticalHeight: 500,
-        vThumbWidth: 500,
+        verticalHeight: 200,
+        vThumbWidth: 100,
         thumbItem: 10,
         pager: true,
         gallery: false,
