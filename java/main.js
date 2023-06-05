@@ -171,6 +171,30 @@ $(document).ready(function () {
             profileHigh = window.setInterval(sliderHigh, 5000);
         }, 2500);
     });
+    $('#flow-11').click(function () {
+        $('.view-link').attr('href', 'https://orykevin.github.io/countrySE/');
+        $('.source-link').attr('href', 'https://github.com/orykevin/countrySE/');
+        $('#flow-11 svg').css({
+            "animation": "loading 2500ms ease-in-out infinite alternate"
+        });
+        setTimeout(function () {
+            $('.slide-page-2').fadeIn();
+            profileSld = window.setInterval(slider, 5000);
+            profileHigh = window.setInterval(sliderHigh, 5000);
+        }, 2500);
+    });
+    $('#flow-12').click(function () {
+        $('.view-link').attr('href', 'https://orykevin.github.io/minipodex/');
+        $('.source-link').attr('href', 'https://github.com/orykevin/minipodex/');
+        $('#flow-12 svg').css({
+            "animation": "loading 2500ms ease-in-out infinite alternate"
+        });
+        setTimeout(function () {
+            $('.slide-page-2').fadeIn();
+            profileSld = window.setInterval(slider, 5000);
+            profileHigh = window.setInterval(sliderHigh, 5000);
+        }, 2500);
+    });
 
 
     //<<worksflow button//
